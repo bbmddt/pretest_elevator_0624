@@ -8,19 +8,19 @@ import (
 
 type Person struct {
 	ID          int
-	Origin      int
-	Destination int
+	Origin      int // 起始樓層
+	Destination int // 目標樓層
 }
 
 type Building struct {
-	Floors      int
+	Floors      int // 大樓總樓層數
 	TotalPeople int
 	WaitQueue   map[int]struct {
-		UpQueue   []*Person
-		DownQueue []*Person
+		UpQueue   []*Person // 向上等待隊列
+		DownQueue []*Person // 向下等待隊列
 	}
 	Elevators   []*Elevator
-	PeopleDone  int
+	PeopleDone  int // 已完成運送的乘客數
 	TimeElapsed int
 	Mutex       sync.Mutex
 }

@@ -8,8 +8,8 @@ import (
 type Elevator struct {
 	ID           int
 	CurrentFloor int
-	Direction    string // "up", "down", "idle"
-	Passengers   []*Person
+	Direction    string    // 移動方向："up", "down", "idle"
+	Passengers   []*Person // 電梯內的乘客
 	Mutex        sync.Mutex
 }
 
